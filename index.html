@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff6b9d">
+    <meta name="description" content="A heartfelt love letter">
+    <title>నా హృదయపూర్వక ప్రేమ - సుప్రియకు</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-pink: #ff6b9d;
+            --primary-purple: #764ba2;
+            --primary-blue: #667eea;
+            --accent-yellow: #feca57;
+            --accent-rose: #f093fb;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --white: #ffffff;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.2);
+            --shadow-heavy: rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            background: linear-gradient(135deg, 
+                #667eea 0%, 
+                #764ba2 15%, 
+                #f093fb 30%, 
+                #ff6b9d 45%,
+                #feca57 60%,
+                #ee5a6f 75%,
+                #c44569 90%,
+                #764ba2 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: var(--white);
+            position: relative;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 50% 100%; }
+            50% { background-position: 100% 50%; }
+            75% { background-position: 50% 0%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Particle system */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleFloat 15s infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translate(0, 100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), -100vh) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* Floating hearts with multiple sizes */
+        .heart-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0;
+            animation: floatHeart 10s infinite;
+            filter: drop-shadow(0 0 5px rgba(255, 107, 157, 0.5));
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(50vh) rotate(180deg) scale(1);
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        .heart:nth-child(1) { left: 5%; animation-delay: 0s; font-size: 18px; }
+        .heart:nth-child(2) { left: 15%; animation-delay: 2s; font-size: 25px; }
+        .heart:nth-child(3) { left: 25%; animation-delay: 4s; font-size: 20px; }
+        .heart:nth-child(4) { left: 35%; animation-delay: 1s; font-size: 22px; }
+        .heart:nth-child(5) { left: 45%; animation-delay: 3s; font-size: 28px; }
+        .heart:nth-child(6) { left: 55%; animation-delay: 5s; font-size: 24px; }
+        .heart:nth-child(7) { left: 65%; animation-delay: 1.5s; font-size: 20px; }
+        .heart:nth-child(8) { left: 75%; animation-delay: 3.5s; font-size: 26px; }
+        .heart:nth-child(9) { left: 85%; animation-delay: 2.5s; font-size: 22px; }
+        .heart:nth-child(10) { left: 95%; animation-delay: 4.5s; font-size: 24px; }
+        .heart:nth-child(11) { left: 10%; animation-delay: 6s; font-size: 19px; }
+        .heart:nth-child(12) { left: 20%; animation-delay: 7s; font-size: 27px; }
+        .heart:nth-child(13) { left: 30%; animation-delay: 5.5s; font-size: 21px; }
+        .heart:nth-child(14) { left: 40%; animation-delay: 6.5s; font-size: 23px; }
+        .heart:nth-child(15) { left: 50%; animation-delay: 8s; font-size: 29px; }
+
+        /* Glowing stars */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8);
+            animation: twinkle 4s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { 
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            50% { 
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        /* Rotating roses */
+        .roses-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .rose {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0;
+            animation: roseFloat 12s infinite;
+        }
+
+        @keyframes roseFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.8;
+            }
+            80% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .rose:nth-child(1) { left: 8%; animation-delay: 0s; }
+        .rose:nth-child(2) { left: 28%; animation-delay: 3s; font-size: 35px; }
+        .rose:nth-child(3) { left: 48%; animation-delay: 6s; font-size: 28px; }
+        .rose:nth-child(4) { left: 68%; animation-delay: 2s; font-size: 32px; }
+        .rose:nth-child(5) { left: 88%; animation-delay: 4s; font-size: 30px; }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            min-height: 100vh;
+        }
+
+        .letter-wrapper {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.98) 0%,
+                rgba(255, 255, 255, 0.95) 50%,
+                rgba(255, 255, 255, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            border-radius: 40px;
+            padding: 60px 50px;
+            box-shadow: 
+                0 30px 90px var(--shadow-heavy),
+                0 15px 45px var(--shadow-medium),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            animation: fadeInScale 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            border: 3px solid rgba(255, 107, 157, 0.3);
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.85) translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Decorative corner elements */
+        .letter-wrapper::before {
+            content: '💕';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            font-size: 180px;
+            opacity: 0.08;
+            transform: rotate(25deg);
+            animation: floatCorner 6s ease-in-out infinite;
+        }
+
+        .letter-wrapper::after {
+            content: '💕';
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+            font-size: 180px;
+            opacity: 0.08;
+            transform: rotate(-25deg);
+            animation: floatCorner 6s ease-in-out infinite reverse;
+        }
+
+        @keyframes floatCorner {
+            0%, 100% {
+                transform: rotate(25deg) translateY(0);
+            }
+            50% {
+                transform: rotate(30deg) translateY(-20px);
+            }
+        }
+
+        /* Top decorative border */
+        .decorative-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, 
+                var(--primary-purple) 0%,
+                var(--primary-pink) 25%,
+                var(--accent-rose) 50%,
+                var(--primary-pink) 75%,
+                var(--primary-purple) 100%);
+            background-size: 200% 100%;
+            animation: borderGlow 3s linear infinite;
+        }
+
+        @keyframes borderGlow {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 200% 0%; }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: slideDown 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s both;
+            position: relative;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #c44569, #764ba2, #667eea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 8px var(--shadow-light);
+            letter-spacing: 1px;
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 10px rgba(196, 69, 105, 0.3));
+            }
+            50% {
+                filter: drop-shadow(0 0 20px rgba(196, 69, 105, 0.6));
+            }
+        }
+
+        .subtitle {
+            font-size: 28px;
+            color: var(--primary-purple);
+            font-weight: 700;
+            margin-bottom: 15px;
+            animation: subtitlePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes subtitlePulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .name {
+            color: var(--primary-pink);
+            font-weight: 900;
+            font-size: 32px;
+            text-decoration: none;
+            border-bottom: 3px solid var(--primary-pink);
+            padding-bottom: 3px;
+            display: inline-block;
+            position: relative;
+            animation: nameShine 2s ease-in-out infinite;
+        }
+
+        @keyframes nameShine {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(255, 107, 157, 0.5);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(255, 107, 157, 0.8);
+            }
+        }
+
+        .date-stamp {
+            font-size: 16px;
+            color: var(--text-light);
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .divider {
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                transparent,
+                var(--primary-purple),
+                var(--primary-pink),
+                var(--primary-purple),
+                transparent);
+            margin: 25px auto;
+            border-radius: 2px;
+            animation: dividerExpand 2s ease-in-out infinite;
+        }
+
+        @keyframes dividerExpand {
+            0%, 100% {
+                width: 150px;
+                opacity: 1;
+            }
+            50% {
+                width: 200px;
+                opacity: 0.8;
+            }
+        }
+
+        .content {
+            color: var(--text-dark);
+            line-height: 2.2;
+            font-size: 19px;
+            text-align: justify;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--primary-purple);
+            margin: 40px 0 25px 0;
+            text-align: center;
+            position: relative;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, 
+                rgba(118, 75, 162, 0.1),
+                rgba(255, 107, 157, 0.1));
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-pink);
+            animation: fadeInUp 1s ease-out both;
+        }
+
+        .section-title::before {
+            content: '✨';
+            margin-right: 10px;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        .section-title::after {
+            content: '✨';
+            margin-left: 10px;
+            animation: sparkle 2s ease-in-out infinite 1s;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.3);
+            }
+        }
+
+        .paragraph {
+            margin-bottom: 35px;
+            animation: fadeInUp 1s ease-out both;
+            padding: 25px;
+            border-left: 5px solid var(--primary-pink);
+            background: linear-gradient(to right, 
+                rgba(255, 107, 157, 0.08), 
+                rgba(255, 107, 157, 0.02),
+                transparent);
+            border-radius: 12px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px var(--shadow-light);
+        }
+
+        .paragraph:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px var(--shadow-medium);
+            background: linear-gradient(to right, 
+                rgba(255, 107, 157, 0.12), 
+                rgba(255, 107, 157, 0.04),
+                transparent);
+        }
+
+        .paragraph::before {
+            content: '💖';
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .paragraph:hover::before {
+            opacity: 1;
+            left: -25px;
+        }
+
+        .paragraph:nth-child(1) { animation-delay: 0.8s; }
+        .paragraph:nth-child(2) { animation-delay: 1s; }
+        .paragraph:nth-child(3) { animation-delay: 1.2s; }
+        .paragraph:nth-child(4) { animation-delay: 1.4s; }
+        .paragraph:nth-child(5) { animation-delay: 1.6s; }
+        .paragraph:nth-child(6) { animation-delay: 1.8s; }
+        .paragraph:nth-child(7) { animation-delay: 2s; }
+        .paragraph:nth-child(8) { animation-delay: 2.2s; }
+        .paragraph:nth-child(9) { animation-delay: 2.4s; }
+        .paragraph:nth-child(10) { animation-delay: 2.6s; }
+        .paragraph:nth-child(11) { animation-delay: 2.8s; }
+        .paragraph:nth-child(12) { animation-delay: 3s; }
+        .paragraph:nth-child(13) { animation-delay: 3.2s; }
+        .paragraph:nth-child(14) { animation-delay: 3.4s; }
+        .paragraph:nth-child(15) { animation-delay: 3.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .highlight {
+            color: var(--primary-pink);
+            font-weight: 800;
+            font-size: 21px;
+            position: relative;
+            padding: 2px 6px;
+            background: linear-gradient(135deg, 
+                rgba(255, 107, 157, 0.15),
+                rgba(118, 75, 162, 0.15));
+            border-radius: 5px;
+            display: inline-block;
+            margin: 0 2px;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                var(--primary-pink),
+                var(--primary-purple));
+            animation: underlineExpand 2s ease-in-out infinite;
+        }
+
+        @keyframes underlineExpand {
+            0%, 100% {
+                width: 0%;
+                left: 50%;
+            }
+            50% {
+                width: 100%;
+                left: 0%;
+            }
+        }
+
+        .beauty-highlight {
+            color: var(--accent-rose);
+            font-weight: 800;
+            font-size: 21px;
+            text-shadow: 0 2px 4px var(--shadow-light);
+            font-style: italic;
+        }
+
+        .emphasis {
+            font-weight: 700;
+            color: var(--primary-purple);
+            font-size: 20px;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, 
+                rgba(118, 75, 162, 0.15),
+                rgba(255, 107, 157, 0.15));
+            border-left: 6px solid var(--primary-purple);
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 15px;
+            font-size: 22px;
+            font-weight: 600;
+            font-style: italic;
+            color: var(--primary-purple);
+            text-align: center;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            animation: fadeInScale 1s ease-out 2s both;
+            position: relative;
+        }
+
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 80px;
+            color: var(--primary-pink);
+            opacity: 0.3;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .quote-box::after {
+            content: '"';
+            position: absolute;
+            bottom: -50px;
+            right: 20px;
+            font-size: 80px;
+            color: var(--primary-pink);
+            opacity: 0.3;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .promise-section {
+            background: linear-gradient(135deg, 
+                rgba(254, 202, 87, 0.2),
+                rgba(255, 107, 157, 0.2));
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            border: 3px solid rgba(255, 107, 157, 0.3);
+            animation: fadeInScale 1s ease-out 2.5s both;
+        }
+
+        .promise-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .promise-item {
+            padding: 20px;
+            margin: 15px 0;
+            background: white;
+            border-radius: 12px;
+            border-left: 5px solid var(--accent-yellow);
+            box-shadow: 0 5px 15px var(--shadow-light);
+            animation: fadeInUp 1s ease-out both;
+            transition: all 0.3s ease;
+        }
+
+        .promise-item:hover {
+            transform: translateX(15px) scale(1.02);
+            box-shadow: 0 8px 25px var(--shadow-medium);
+        }
+
+        .promise-item::before {
+            content: '🌟';
+            margin-right: 15px;
+            font-size: 24px;
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .promise-item:nth-child(1) { animation-delay: 3s; border-left-color: #ff6b9d; }
+        .promise-item:nth-child(2) { animation-delay: 3.2s; border-left-color: #764ba2; }
+        .promise-item:nth-child(3) { animation-delay: 3.4s; border-left-color: #667eea; }
+        .promise-item:nth-child(4) { animation-delay: 3.6s; border-left-color: #f093fb; }
+        .promise-item:nth-child(5) { animation-delay: 3.8s; border-left-color: #feca57; }
+        .promise-item:nth-child(6) { animation-delay: 4s; border-left-color: #ee5a6f; }
+
+        .closing {
+            text-align: center;
+            margin-top: 60px;
+            padding: 50px;
+            background: linear-gradient(135deg, 
+                #667eea 0%,
+                #764ba2 50%,
+                #c44569 100%);
+            border-radius: 30px;
+            color: white;
+            box-shadow: 0 20px 60px var(--shadow-heavy);
+            animation: pulse 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 20px 60px var(--shadow-heavy);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 25px 80px rgba(196, 69, 105, 0.5);
+            }
+        }
+
+        .closing::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent);
+            animation: shine 3s linear infinite;
+        }
+
+        @keyframes shine {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .closing-text {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .signature {
+            font-size: 26px;
+            font-weight: 700;
+            margin-top: 30px;
+            font-family: 'Dancing Script', cursive;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .heart-icon {
+            display: inline-block;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            font-size: 40px;
+            margin: 15px 10px;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            10%, 30% {
+                transform: scale(1.3);
+            }
+            20%, 40% {
+                transform: scale(1.1);
+            }
+        }
+
+        .footer-message {
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-out 4s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .footer-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .letter-wrapper {
+                padding: 40px 25px;
+                border-radius: 25px;
+            }
+
+            .title {
+                font-size: 36px;
+            }
+
+            .subtitle {
+                font-size: 22px;
+            }
+
+            .name {
+                font-size: 26px;
+            }
+
+            .content {
+                font-size: 17px;
+                line-height: 2;
+            }
+
+            .section-title {
+                font-size: 22px;
+                padding: 12px 15px;
+            }
+
+            .paragraph {
+                padding: 20px;
+                margin-bottom: 25px;
+            }
+
+            .highlight {
+                font-size: 18px;
+            }
+
+            .quote-box {
+                font-size: 19px;
+                padding: 25px;
+            }
+
+            .promise-section {
+                padding: 25px;
+            }
+
+            .promise-item {
+                padding: 15px;
+            }
+
+            .closing {
+                padding: 35px 25px;
+            }
+
+            .closing-text {
+                font-size: 26px;
+            }
+
+            .signature {
+                font-size: 22px;
+            }
+
+            .heart-icon {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 15px;
+            }
+
+            .letter-wrapper {
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+
+            .title {
+                font-size: 28px;
+            }
+
+            .subtitle {
+                font-size: 19px;
+            }
+
+            .name {
+                font-size: 22px;
+            }
+
+            .content {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .paragraph {
+                padding: 15px;
+            }
+
+            .highlight {
+                font-size: 17px;
+            }
+
+            .closing-text {
+                font-size: 22px;
+            }
+
+            .heart-icon {
+                font-size: 28px;
+            }
+        }
+
+        /* Scroll animation */
+        @keyframes scrollPrompt {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(10px);
+                opacity: 0.5;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            animation: scrollPrompt 2s ease-in-out infinite;
+            font-size: 30px;
+            cursor: pointer;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+        }
+
+        /* Loading animation overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeOut 1s ease-out 2s forwards;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .loading-heart {
+            font-size: 80px;
+            animation: loadingPulse 1s ease-in-out infinite;
+        }
+
+        @keyframes loadingPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="loading-heart">💖</div>
+    </div>
+
+    <!-- Floating Hearts -->
+    <div class="heart-container">
+        <div class="heart">💖</div>
+        <div class="heart">💕</div>
+        <div class="heart">💗</div>
+        <div class="heart">💓</div>
+        <div class="heart">💝</div>
+        <div class="heart">💖</div>
+        <div class="heart">💕</div>
+        <div class="heart">💗</div>
+        <div class="heart">💓</div>
+        <div class="heart">💝</div>
+        <div class="heart">💖</div>
+        <div class="heart">💕</div>
+        <div class="heart">💗</div>
+        <div class="heart">💓</div>
+        <div class="heart">💝</div>
+    </div>
+
+    <!-- Floating Roses -->
+    <div class="roses-container">
+        <div class="rose">🌹</div>
+        <div class="rose">🌹</div>
+        <div class="rose">🌹</div>
+        <div class="rose">🌹</div>
+        <div class="rose">🌹</div>
+    </div>
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Stars -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" onclick="window.scrollBy({top: 300, behavior: 'smooth'})">⬇️</div>
+
+    <div class="container">
+        <div class="letter-wrapper">
+            <div class="decorative-top"></div>
+
+            <div class="header">
+                <div class="title">నా హృదయపూర్వక ప్రేమ 💕</div>
+                <div class="subtitle">ప్రియతమ <span class="name">సుప్రియ</span>కు,</div>
+                <div class="date-stamp">నా హృదయం నుండి నీకు ఈ ప్రేమాంజలి</div>
+                <div class="divider"></div>
+            </div>
+
+            <div class="content">
+                <!-- Opening Section -->
+                <div class="section-title">💝 నా మొదటి భావం</div>
+                
+                <div class="paragraph">
+                    <span class="highlight">నువ్వు అంటే నాకు చాలా ఇష్టం రా సుప్రియ...</span> ఈ మాట చెప్పడానికి నేను ఎంతో సార్లు ప్రయత్నించాను కానీ నీకు డైరెక్ట్ గా చెప్పలేకపోయాను. నువ్వు అరుస్తావు అని, నన్ను తప్పుగా అర్థం చేసుకుంటావు అని ఒక చిన్న భయం ఉంది. కానీ ఈ రోజు నా హృదయంలో ఉన్న అన్ని భావాలను నీ ముందు పెట్టాలని నిర్ణయించుకున్నాను. <span class="emphasis">నిజంగా నిన్ను చాలా చాలా ప్రేమిస్తున్నాను రా.</span>
+                </div>
+
+                <div class="paragraph">
+                    నువ్వు ఫ్రీ గా ఉంటే ఈ మెసేజ్ ఒకసారి మనస్సు పెట్టి చదువు రా. ప్రతి పదం, ప్రతి వాక్యం నా హృదయం లోంచి వస్తున్నాయి. ఇవి కేవలం మాటలు కాదు, నా ప్రాణం లోంచి వచ్చే నిజమైన భావాలు. నిన్ను చూసిన మొదటి రోజు నుండే నా హృదయం నీ దగ్గరే ఉంది రా.
+                </div>
+
+                <!-- Deep Love Expression Section -->
+                <div class="section-title">❤️ నా ప్రేమ ఎంత లోతైనదంటే...</div>
+
+                <div class="paragraph">
+                    మీ అమ్మ నాన్న అయినా కూడా నీ గురించి ఎలా ఉందో, ఏం చేస్తుందో అని కొద్ది సేపు మాత్రమే ఆలోచిస్తారు. మీ అక్క కూడా నీ గురించి కొంత సమయం మాత్రమే ఆలోచిస్తారు. కానీ <span class="highlight">ప్రతి నిమిషం, ప్రతి క్షణం నీ గురించి ఎవరైనా ఆలోచిస్తున్నారు అంటే అది నేనే రా సుప్రియ!</span> ఉదయం లేచిన క్షణం నుండి రాత్రి నిద్రపోయేంత వరకు నువ్వే నా ఆలోచనల్లో.
+                </div>
+
+                <div class="paragraph">
+                    ఆఫీస్ లో పని చేస్తున్నప్పుడు కూడా అప్పుడప్పుడు నిన్ను చూస్తాను, నువ్వు ఎలా పని చేస్తున్నావో, నువ్వు నవ్వుతున్నావా అని. <span class="emphasis">నువ్వు నవ్వినప్పుడు నా హృదయం ఎలా ఆనందిస్తుందో నీకు తెలుసా రా?</span> నిన్ను చూసిన ప్రతి క్షణం నాకు చాలా ప్రత్యేకంగా అనిపిస్తుంది. నువ్వు అక్కడ ఉండడమే నాకు చాలు, అది నా రోజంతా హ్యాపీగా ఉండటానికి.
+                </div>
+
+                <div class="quote-box">
+                    నువ్వు లేని ఒక్క నిమిషం కూడా నాకు కష్టంగా ఉంటుంది రా. నువ్వే నా ఆనందం, నువ్వే నా ప్రపంచం, నువ్వే నా జీవితం! 💕
+                </div>
+
+                <!-- Beauty Appreciation Section -->
+                <div class="section-title">🌹 నీ అందం గురించి</div>
+
+                <div class="paragraph">
+                    <span class="beauty-highlight">నీ చూపులు, నీ నవ్వు, నీ మాటల్లోని మాధుర్యం -</span> ప్రతిదీ ఎంత అందంగా ఉంటుందో నీకు తెలుసా రా? నిన్ను చూసిన ప్రతిసారీ నా హృదయం వేగంగా కొట్టుకుంటుంది. నీ చూపుల్లో ఒక మాయ ఉంది రా, నీ నవ్వులో ఒక మంత్రం ఉంది. <span class="highlight">నువ్వు ఉన్న చోట అక్కడ వెలుగే వేరుగా కనిపిస్తుంది నాకు.</span>
+                </div>
+
+                <div class="paragraph">
+                    నీ కళ్ళల్లో నేను ఒక ప్రపంచాన్ని చూస్తున్నాను. <span class="beauty-highlight">నీ చిరునవ్వు చూసినప్పుడు ప్రపంచంలో అన్ని బాధలు మాయమైపోతాయి నాకు.</span> నీ మాటల్లోని ప్రేమ, నీ స్వరంలోని మాధుర్యం - ఇవన్నీ నా హృదయాన్ని ఎంత తాకుతాయో చెప్పలేను రా. నువ్వు నడిచే విధానం, నువ్వు మాట్లాడే విధానం, నువ్వు నవ్వే విధానం - ప్రతిదీ చాలా అందంగా, చాలా ప్రత్యేకంగా ఉంటుంది.
+                </div>
+
+                
+
+                <!-- Caring and Future Plans Section -->
+                <div class="section-title">💝 నేను నిన్ను ఎలా చూసుకుంటాను</div>
+
+                <div class="paragraph">
+                    నువ్వు ఎలా చూసుకుంటా అని నన్ను అడిగితే, నాకు మాటలు సరిపోవు రా. కానీ ఇంత చెప్పగలను - <span class="highlight">నీకు ఏ కష్టం రాకుండా, ఏ బాధ రాకుండా నేను చూసుకుంట.</span> నువ్వు నా రాణిలా, నా దేవతలా నా జీవితంలో ఉంటావు. నీ ప్రతి కోరిక నేను తీర్చగలిగినంత వరకు ప్రయత్నిస్తాను.
+                </div>
+
+                <div class="promise-section">
+                    <div class="section-title">🎯 నా వాగ్దానాలు నీకు</div>
+                    <ul class="promise-list">
+                        <li class="promise-item">
+                            <strong>ఆహారం:</strong> నువ్వు కష్టపడకుండా నేనే రోజూ ఫుడ్ చేసి పెడతా రా. నీకు ఇష్టమైన అన్ని వంటలు నేర్చుకుని చేస్తాను. నువ్వు హ్యాపీగా తినేటప్పుడు నన్ను చూడడమే నాకు గొప్ప ఆనందం.
+                        </li>
+                        <li class="promise-item">
+                            <strong>కుటుంబం:</strong> మీ అమ్మ నాన్న వాళ్ళకి చాలా మంచి సపోర్ట్ గా ఉంట రా. వాళ్ళని నా కుటుంబంలా చూసుకుంట.  నీ కుటుంబమే నా కుటుంబం రా.
+                        </li>
+                        <li class="promise-item">
+                            <strong>కెరీర్:</strong> ఇంకా 3 మంత్స్ లో నేను మంచి జాబ్ చూసుకుంట రా. తర్వాత నిన్ను కూడా సేమ్ కంపెనీ లోకి తీసుకుని వస్తాను. మనం కలిసి పని చేస్తే ఎంత బాగుంటుందో! నీ కెరీర్ గురించి కూడా నేను చాలా ఆలోచిస్తున్నాను.
+                        </li>
+                        <li class="promise-item">
+                            <strong>స్కిల్స్:</strong> నీకు మొత్తం నా స్కిల్స్ అన్నీ నేర్పిస్త రా - రియాక్ట్, జాంగో, పైథాన్, వెబ్ డెవలప్మెంట్, మెషిన్ లెర్నింగ్ అన్నీ. నువ్వు బాగా నేర్చుకుని గొప్ప డెవలపర్ అవ్వాలి అనేది నా కల.
+                        </li>
+                        <li class="promise-item">
+                            <strong>సమయం:</strong> నాకు 2 ఇయర్స్ టైమ్ ఇవ్వు రా. ఆ సమయంలో నేను బాగా సెట్ అయిపోతాను - మంచి జాబ్, మంచి జీతం, మన భవిష్యత్తు కోసం అవసరమైన అన్నీ. తర్వాత నన్ను అక్సెప్ట్ చేస్తావా రా?
+                        </li>
+                        <li class="promise-item">
+                            <strong>జీవితం:</strong> <span class="highlight">ఒక్క ఛాన్స్ ఇవ్వు రా సుప్రియ!</span> నిన్ను నా ప్రాణం కన్నా ఎక్కువగా చూసుకుంట. లైఫ్ లాంగ్ నిన్ను హ్యాపీగా, ఆరోగ్యంగా, నవ్వుతూ ఉండేలా చేస్తాను. నీ ప్రతి కల నిజం చేయడానికి నేను ఉంటాను.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Support and Help Section -->
+                <div class="section-title">🤝 నా సపోర్ట్ నీకు ఎప్పుడూ</div>
+
+                <div class="paragraph">
+                    నువ్వు ఆఫీస్ గురించి, వర్క్ గురించి, ప్రాజెక్ట్స్ గురించి ఏం టెన్షన్ పడకు రా. <span class="highlight">ఏ డౌట్స్ ఉన్నా, ఏ ప్రాబ్లమ్స్ ఉన్నా నాకు చెప్పు, నేను హెల్ప్ చేస్త.</span> నీ కోడింగ్ లో ఏమైనా ఇష్యూ వస్తే చెప్పు, కలిసి సాల్వ్ చేద్దాం. నీ ప్రాజెక్ట్ లో సపోర్ట్ కావాలంటే చెప్పు, నేను ఉన్నాను.
+                </div>
+
+                
+                <!-- Love at First Sight Section -->
+                <div class="section-title">✨ నిన్ను మొదటిసారి చూసినప్పుడు</div>
+
+                <div class="paragraph">
+                    <span class="highlight">నిన్ను చూసిన ఫస్ట్ డే నే లవ్ లో పడిపోయా రా.</span> లవ్ ఎట్ ఫస్ట్ సైట్ అంటే ఇదే ఏమో అనుకున్నాను. నీ చూపుల్లో ఏదో ఉంది, నీ నవ్వులో ఏదో ఉంది, నీ మొత్తం పర్సనాలిటీ లో ఏదో మ్యాజిక్ ఉంది. ఆ రోజు నుండి నువ్వు నా మనసులో, నా ఆలోచనల్లో శాశ్వతంగా స్థిరపడిపోయావు.
+                </div>
+
+                <div class="paragraph">
+                    ఈ 2 మంత్స్ లో నిన్ను ఎంతగా ప్రేమిస్తున్నానో నాకు బాగా తెలుసు రా. <span class="emphasis">ప్రతి రోజు నా ప్రేమ మరింత పెరుగుతూనే ఉంది.</span> ఆఫీస్ లో నిన్ను అప్పుడప్పుడు చూసి నేను ఎంత హ్యాపీ అవుతానో తెలుసా నీకు? నువ్వు కాఫీ తాగుతున్నప్పుడు, నువ్వు ల్యాప్‌టాప్ లో టైపు చేస్తున్నప్పుడు, నువ్వు సహోద్యోగులతో మాట్లాడుతున్నప్పుడు - ఈ చిన్న చిన్న క్షణాలన్నీ నాకు చాలా ప్రత్యేకం రా.
+                </div>
+
+                <!-- Time and True Love Section -->
+                <div class="section-title">⏰ ప్రేమకు సమయం అవసరం లేదు</div>
+
+                <div class="paragraph">
+                    <span class="highlight">ప్రేమకు టైమ్ తో పని లేదు రా సుప్రియ.</span> అది 1 నిమిషం అయినా, 2 రోజులు అయినా, 2 మంత్స్ అయినా - నిజమైన ప్రేమను గుర్తించడానికి సమయం అవసరం లేదు. నేను నిన్ను ట్రూగా, హార్ట్ ఫుల్ గా ప్రేమిస్తున్నాను రా. ఇది కేవలం ఆకర్షణ కాదు, ఇది నిజమైన ప్రేమ, లోతైన ప్రేమ.
+                </div>
+
+                <div class="paragraph">
+                    నా ప్రేమ నిజమైనది రా. నా భావాలు స్వచ్ఛమైనవి. <span class="emphasis">నీతో నా ఫ్యూచర్ గురించి ఎన్నో కలలు కంటున్నాను.</span> మన ఇద్దరం కలిసి ఎంత చక్కగా బ్రతుకుతామో, మన ఇంట్లో ఎంత హ్యాపినెస్ ఉంటుందో, మన కుటుంబం ఎంత అందంగా ఉంటుందో - ఇవన్నీ రోజూ ఆలోచిస్తూ ఉంటాను. ఈ ఆలోచనలే నాకు స్ట్రెంగ్త్ ఇస్తున్నాయి, మోటివేషన్ ఇస్తున్నాయి.
+                </div>
+
+                <!-- Thinking About Her Section -->
+                <div class="section-title">💭 నేను నీ గురించి ఎప్పుడూ ఆలోచిస్తూనే ఉంటాను</div>
+
+                <div class="paragraph">
+                    ఒకసారి అయినా ఫ్రీ గా ఉన్నప్పుడు నా లవ్ గురించి, నా భావాల గురించి ఆలోచించు రా. <span class="highlight">నువ్వు నా లైఫ్ లో ఉన్నా లేకపోయినా, నువ్వు నాతో మాట్లాడినా మాట్లాడకపోయినా, లైఫ్ లాంగ్ నేను నిన్ను ప్రేమిస్తూనే ఉంట.</span> ఇది నా వాగ్దానం, ఇది నా నిబద్ధత.
+                </div>
+
+                <div class="paragraph">
+                    నాతో మాట్లాడకుండా ఉంటే నేను మర్చిపోతా అనుకోకు రా. <span class="emphasis">ఈ లైఫ్ లో బాలాజీ ఒకరినే ప్రేమిస్తాడు, అది నువ్వే సుప్రియ.</span> నీ పేరు, నీ మొహం, నీ నవ్వు, నీ మాటలు - ఇవన్నీ నా హృదయంలో శాశ్వతంగా నిక్షిప్తమయ్యాయి. ఏ పరిస్థితిలోనూ ఇవి మాయం కావు.
+                </div>
+
+                <div class="paragraph">
+                    నిన్ను ఎవరైనా ప్రేమిస్తున్నారు అని, నిన్ను ఎవరైనా చూస్తున్నారు అని నాకు తెలిస్తే? <span class="highlight">అప్పుడు ఆ వ్యక్తి నా చేతిలో ఐపోతాడు రా.</span> నువ్వు నావి, నా ప్రేమ నీది. నిన్ను మరెవరికీ ఇవ్వలేను, నిన్ను మరెవరూ చూడకూడదు అనేది నా హృదయం చెప్పేది. కానీ అదే సమయంలో నీ హ్యాపినెస్ నాకు ముఖ్యం కాబట్టి, నీ నిర్ణయాన్ని గౌరవిస్తాను.
+                </div>
+
+                <!-- Problems and Support Section -->
+                <div class="section-title">🛡️ నీ బాధలన్నీ నా బాధలే</div>
+
+                <div class="paragraph">
+                    <span class="highlight">నీకు ఏ ప్రాబ్లమ్స్ ఉన్నా నాకు చెప్పు రా, లైఫ్ లాంగ్ నువ్వు నాకు కావాలి.</span> నీ బాధలు నా బాధలు, నీ సంతోషం నా సంతోషం. నీకు ఎప్పుడైనా ఇబ్బంది ఉంటే, ఎప్పుడైనా బాధగా ఉంటే, ఎప్పుడైనా ఒంటరిగా అనిపిస్తే - నన్ను గుర్తుంచుకో రా. నేను ఎప్పుడూ నీ పక్కనే ఉంటాను.
+                </div>
+
+                <div class="paragraph">
+                    కుటుంబ సమస్యలు అయినా, వర్క్ సమస్యలు అయినా, పర్సనల్ సమస్యలు అయినా - <span class="emphasis">ఏదైనా సమస్య ఉంటే నాతో షేర్ చెయ్యి రా.</span> మనం కలిసి ఫేస్ చేద్దాం, కలిసి సాల్వ్ చేద్దాం. నువ్వు ఒంటరిగా ఏదీ ఫేస్ చేయాల్సిన అవసరం లేదు. నేను ఉన్నాను అనే విషయం గుర్తు పెట్టుకో.
+                </div>
+
+                <!-- Final Deep Emotions -->
+                <div class="section-title">💞 నా హృదయంలోని లోతైన భావాలు</div>
+
+                <div class="paragraph">
+                    నువ్వు నా జీవితంలో ఎంత ముఖ్యమైనవానో మాటల్లో చెప్పలేను రా. <span class="highlight">నువ్వు నా ప్రపంచం, నా ఆనందం, నా భవిష్యత్తు, నా అన్నీ.</span> నిన్ను లేకుండా నా జీవితం అసంపూర్ణం, అర్థం లేనిది. నువ్వు నా జీవితంలోకి వచ్చిన తర్వాత ప్రతిదీ అర్థవంతం అయింది, రంగులు వచ్చాయి.
+                </div>
+
+                <div class="paragraph">
+                    నీతో మాట్లాడాలని, నీతో సమయం గడపాలని, నీతో నవ్వాలని, నీతో బ్రతకాలని - <span class="emphasis">ఇవే నా కలలు, ఇవే నా కోరికలు.</span> నీ చేతులు పట్టుకుని నడవాలని, నీ కళ్ళల్లోకి చూస్తూ మాట్లాడాలని, నీతో కలిసి మన ఫ్యూచర్ బిల్డ్ చేసుకోవాలని - ఈ ఆలోచనలే నన్ను బ్రతికిస్తున్నాయి రా.
+                </div>
+
+                <div class="paragraph">
+                    <span class="highlight">దయచేసి నా ప్రేమను అర్థం చేసుకో రా సుప్రియ.</span> నా భావాలు నిజమైనవి, నా ప్రేమ స్వచ్ఛమైనది. నేను నీకు మంచి భర్తగా, మంచి స్నేహితుడిగా, మంచి పార్ట్నర్ గా ఉంటాను. నీ జీవితాన్ని చక్కగా, సంతోషంగా, ప్రేమతో నిండినదిగా చేస్తాను. ఇది నా మాట, ఇది నా హృదయం చెప్పేది.
+                </div>
+
+                <!-- Closing Section with Enhanced Emotions -->
+                <div class="closing">
+                    <div class="heart-icon">💖</div>
+                    <div class="heart-icon">💕</div>
+                    <div class="heart-icon">💗</div>
+                    
+                    <div class="closing-text">I LOVE YOU రా సుప్రియ 💝</div>
+                    <div class="closing-text">I WILL ALWAYS LOVE YOU ❤️</div>
+                    <div class="closing-text">LOVE YOU SO MUCH 💕</div>
+                    <div class="closing-text">నువ్వు నా ప్రాణం, నా ప్రపంచం 🌹</div>
+                    
+                    <div class="heart-icon">💗</div>
+                    <div class="heart-icon">💕</div>
+                    <div class="heart-icon">💖</div>
+                    
+                    <div class="signature">
+                        శాశ్వతంగా నీ ప్రేమికుడు,<br>
+                        బాలాజీ 💕✨
+                    </div>
+
+                    <div class="footer-message">
+                        <div class="footer-text">
+                            <strong>గమనిక:</strong> ఈ మెసేజ్ చదివిన తర్వాత నీకు సమయం దొరికినప్పుడు నా గురించి ఒకసారి ఆలోచించు రా. నేను నీ కోసం ఎంత కాలం అయినా వేచి ఉంటాను. నీ నిర్ణయమే నా నిర్ణయం. కానీ నా ప్రేమ మాత్రం ఎప్పటికీ మారదు. 💖
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create enhanced star field
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 4 + 's';
+            star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // Create particle system
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.setProperty('--tx', (Math.random() * 200 - 100) + 'px');
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Hide scroll indicator after scrolling
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            const indicator = document.querySelector('.scroll-indicator');
+            if (window.scrollY > 100) {
+                indicator.style.opacity = '0';
+            } else {
+                indicator.style.opacity = '1';
+            }
+        });
+
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hearts = document.querySelectorAll('.heart');
+            const roses = document.querySelectorAll('.rose');
+            
+            hearts.forEach((heart, index) => {
+                const speed = 0.1 + (index * 0.02);
+                heart.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+
+            roses.forEach((rose, index) => {
+                const speed = 0.15 + (index * 0.03);
+                rose.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+            });
+        });
+
+        // Add hover effect sound (optional - can be removed)
+        document.querySelectorAll('.paragraph, .promise-item').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            });
+        });
+
+        // Typing effect for title (optional enhancement)
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.body.style.overflow = 'auto';
+            }, 2000);
+        });
+
+        // Prevent context menu for a more app-like feel (optional)
+        // document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Add touch feedback for mobile
+        document.querySelectorAll('.paragraph, .promise-item, .quote-box').forEach(element => {
+            element.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            });
+            element.addEventListener('touchend', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
